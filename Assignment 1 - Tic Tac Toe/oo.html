@@ -1,0 +1,471 @@
+<!-- Assignment 1, WEB2: Created by Kristian M. P. Dashnaw -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe (Object Oriented)</title>
+    
+    <!-- CSS Section-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 2px solid;
+            border-color: black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        td {
+            width: 200px;
+            height: 200px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .emptyGameCell, .markedGameCell {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            color: black;
+            font-size: 155px;
+            border-radius: 0px;
+        }
+
+        .emptyGameCell:hover {
+            background-color: lightgrey;
+        }
+
+        .markedGameCell:hover {
+            background-color: whitesmoke;
+        }
+
+        .rulesArea {
+            display: none;
+        }
+
+        .msgField {
+            background-color: white;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 1.5em;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- HTML Presentation logic -->
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+
+
+        <!-- Rules button -->
+        <button type="button" onclick="toggleRules()">Rules</button>
+        <div id="rules" class="rulesArea">
+            <p>Tic-tac-toe is played on a three-by-three grid by two players,
+            who alternately place the marks X and O in one of the nine spaces 
+            in the grid.</p>
+        
+            <p>In the following example, the first player (X) wins the game in seven steps:</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Tic-tac-toe-game-1.svg" alt="Pictures showing how th game is played">
+
+            <p><h2><b>X starts!</b></h2></p>
+        </div>
+
+
+        <!-- We use JavaScript to manage and display the playing field -->
+        <div id="Tic-tac-toe"></div>
+
+
+        <!-- Container to display the next players turn -->
+        <div class="msgField" id="msgFieldLabel"></div>
+
+
+        <!-- Reset button -->
+        <button type="reset" onclick="game.resetBoard()">Restart</button>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // JavaScript used to support the page layout and general presentation:
+        function toggleRules() {
+            let rulesField = document.getElementById("rules");
+            if (rulesField.style.display === "none" || rulesField.style.display === ""){
+                rulesField.style.display = "block";
+            } else {
+                rulesField.style.display = "none";
+            }
+        }
+
+
+        // Game Logic:
+        
+        // The gameCell class is used to represent each individual cell on the game board.
+        class gameCell {
+            xPos                // Contains the X-Coordinate of this cell, on the playing board.
+            yPos                // Contains the X-Coordinate of this cell, on the playing board.
+            occupiedBy = null   // Used to save which player has marked this cell.
+            #parentGameBoard    // Reference to the parent Game Board, so interactions with cells can be persisted in the GameBoard object.
+
+            constructor(parentGameBoard, x = 0, y = 0){
+                this.#parentGameBoard = parentGameBoard
+                this.xPos = x
+                this.yPos = y
+            }
+
+            get X() {
+                return this.xPos
+            }
+
+            get Y() {
+                return this.yPos
+            }
+
+            set occupiedBy(player){
+                this.occupiedBy = player
+            }
+
+            get occupiedBy(){
+                if(this.occupiedBy == null) {
+                    return null;
+                } else {
+                    return this.occupiedBy;
+                }
+            }
+
+            occupyGameCell(player){
+                this.occupiedBy = player;
+                console.log("Occupied");
+            }
+
+        }
+
+
+        // The gameBoard class is used to represent the entire game board, and consists of a number of gameCells.
+        class gameBoard {
+            lastMoveBy              // Logs which player made the last move
+            cells;                  // Contains a collection of game cells in use by this board.
+            gameSize                // Contains the size of the playing field
+            players                 // Contains the active players
+            nextMoveBy              // Contains the next player to make a mave.
+            gameHtmlElementId       // Contains a reference to the html div inside which to display the actual game board.
+            msgHtmlFieldElementId   // Contains a reference to the html div inside which to display game message (winner, next turn, etc.)
+
+            // Constructor takes an optional parameter size, which specifies the size of the board in cells (length/width). 
+            // I.e. a value of 3 will create a board of size 3x3 = 9 cells.
+            // Required parameters are id elements in the html (i.e. a <div>) defining where game elements should be displayed.
+            constructor(gameElementId, msgFieldElementId, size = 3){
+                this.gameSize = size;
+                this.gameHtmlElementId = gameElementId;
+                this.msgHtmlFieldElementId = msgFieldElementId;
+                this.resetBoard();
+            }
+
+            get getCells(){
+                return this.cells;
+            }
+
+            get gameSize(){
+                return this.gameSize;
+            }
+
+            get nextMoveBy() {
+                return this.nextMoveBy;
+            }
+
+            resetBoard(){
+                // Refresh / Generate the Game Board and dependencies.
+                this.#generateGameCells(this.gameSize);
+                this.lastMoveBy = null;
+                this.players = [];
+
+                // Define Player X:
+                this.players[0] = new player("X", true);
+
+                // Define Player Y:
+                this.players[1] = new player("O");
+                this.nextMoveBy = this.players[0];
+
+                this.refreshBoard();
+            }
+
+            refreshBoard() {
+                // Refresh and display the game elements:
+                document.getElementById(this.gameHtmlElementId).innerHTML = this.#formatGameBoard();
+                this.displayNextPlayer();
+            }
+
+            
+            // Use a html table to contain the playing board.
+            #formatGameBoard(){
+                // format the columns:
+                let gameHTML = "<table>";
+                let cellNumber = 0;
+                for (let y = 0; y < this.gameSize; y++) {
+                    // format the rows within each column:
+                    gameHTML += "<tr>";
+                    for (let x = 0; x < this.gameSize; x++) {
+                        gameHTML += "<td>";
+                        // Format the cell: 
+                        if(this.getGameCell(x, y).occupiedBy == null){
+                            // Check if game is ongoing (no winner found), if so we add interactable buttons to each unmarked cells:
+                            if (this.#checkForWinner() == null) {
+                                // Now check if both players have placed all their marks (max marks = gameSize.. i.e. on a 3x3 board each player can max. 
+                                // have 3 marks placed on the board at a time.)
+                                if(!(this.players[0].numberOfCellsOccupied >= this.gameSize
+                                && this.players[1].numberOfCellsOccupied >= this.gameSize)) {
+                                    // Generate a button to interact with, assigning this cell to a player and marking it!
+                                    gameHTML += `<button class='emptyGameCell' onClick='game.occupyGameCell(${x}, ${y})'> </button>`;
+                                }
+                            }
+                        } else { 
+                            // Otherwise; Display the occupying players mark (X or O)
+                            gameHTML += "<button class='markedGameCell'>" + this.getGameCell(x, y).occupiedBy.marker + " </button>";
+                        } 
+
+                        gameHTML += "</td>";
+                        cellNumber++;
+                    }
+                    gameHTML += "</tr>";
+                }
+                gameHTML += "</table>";
+                return gameHTML;
+            }
+
+            // Returns the game cell at this x/y coordinate
+            getGameCell(x, y) {
+                return this.getCells.find(cell => cell.X === x && cell.Y === y || null);
+            }
+
+            occupyGameCell(x, y) {
+                let cell = this.getGameCell(x, y);
+
+                if(cell && cell.occupiedBy == null) {
+                    // Occupy cell on board:
+                    cell.occupiedBy = this.nextMoveBy;
+
+                    // Add cell to the players list of occupied cells:
+                    this.nextMoveBy.occupyCell(cell);
+
+                    // Toggle the players:
+                    this.lastMoveBy = this.nextMoveBy;
+                    if(this.lastMoveBy === this.players[0]) {
+                        this.nextMoveBy = this.players[1];
+                    } else {
+                        this.nextMoveBy = this.players[0];
+                    }
+
+                    this.refreshBoard(); // Re-render the board
+
+                    // Check if this was the winning move:
+                    if(this.#checkForWinner()) {
+                        this.displayWinner();
+                    }
+                }
+            }
+
+            #generateGameCells(size){
+                // Ensure cells are cleared:
+                this.cells = [];
+
+                // First loop: Ensures cells are generated for all y-coordinates.
+                for (let y = 0; y < size; y++) {
+                    // Second loop: Ensures cells are generated for all x-coordinates at this y-coordinate.
+                    for (let x = 0; x < size; x++) {
+                        const newCell = new gameCell(this, x, y);
+                        this.cells[this.cells.length] = newCell;
+                    }
+                }
+            }
+
+            displayNextPlayer() {
+                let html = "<p><b>Current Turn: <b>";
+                html += this.nextMoveBy.toString();
+                html += "</p>";
+                document.getElementById(this.msgHtmlFieldElementId).innerHTML = html;
+            }
+
+            displayWinner() {
+                let html = "<p><b>WINNER: <b>";
+                html += this.lastMoveBy.toString();
+                html += "</p>";
+                document.getElementById(this.msgHtmlFieldElementId).innerHTML = html;
+            }
+
+            // Returns null, if there is no winner - otherwise returns the winning player!
+            #checkForWinner(){
+                for (let i = 0; i < this.players.length; i++) {
+                    if(this.players[i].cellsOccupied.length === this.gameSize) {
+                        if(this.#checkIfOccupiedCellsAreAdjacent(this.players[i].cellsOccupied)) {
+                            return this.players[i];
+                        }
+                    }
+                }
+                return null;
+            }
+
+            // Checks if all cells are adjacent, based on the first cell. Returns true, if all cells are adjacent (horizontal, diagonal or vertical).
+            #checkIfOccupiedCellsAreAdjacent(cells){
+                // Check if all cells are adjacent:
+                //console.log("Horizontal: " + )
+                if(this.#checkIfOccupiedCellsAreHorizontallyAdjacent(cells) != false
+                    || this.#checkIfOccupiedCellsAreVerticallyAdjacent(cells) != false
+                    || this.#checkIfOccupiedCellsAreDiagonallyAdjacent(cells) != false){
+                    return true;
+                }
+
+                return false
+            }
+
+            #checkIfOccupiedCellsAreHorizontallyAdjacent(cells){
+                // We only check the X-axis based on the first occupied cell and return false if any cell is not on the same X-Axis as the first occupied cell.
+                // Logic: To be on the same X-axis, all cells must have identical y-coordinate values.
+                for (let i = 1; i < cells.length; i++) {
+                    if(cells[i].Y !== cells[0].Y){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            #checkIfOccupiedCellsAreVerticallyAdjacent(cells){
+                // We only check the Y-axis based on the first occupied cell and return false if any cell is not on the same Y-Axis as the first occupied cell.
+                // Logic: To be on the same Y-axis, all cells must have identical x-coordinate values.
+                for (let i = 1; i < cells.length; i++) {
+                    if(cells[i].X !== cells[0].X){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            #checkIfOccupiedCellsAreDiagonallyAdjacent(cells){
+                // Logic: For cells to be diagonally, they cannot share any x or y-values. So this is what we check against:
+                for (let i = 0; i < cells.length; i++) {
+                    let currentCell = cells[i];
+                    for (let j = 0; j < cells.length; j++) {
+                        if(currentCell !== cells[j]) {
+                            if(currentCell.X === cells[j].X || currentCell.Y === cells[j].Y) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
+
+        // The player super class is used to contain shared player information and methods.
+        class player {
+            #cellsOccupied;   // Contains a list of the cells, this player is occupying.
+            #marker;
+            #isPlayerX = false;
+
+            // Marker is the letter to be displayed in cells occupied by this player
+            constructor(marker = " ", playerX = null){
+                this.#cellsOccupied = [];
+                this.#marker = marker;
+                if(playerX != null) {
+                    this.#isPlayerX = true;
+                }
+            }
+
+            get cellsOccupied(){
+                return this.#cellsOccupied;
+            }
+
+            get numberOfCellsOccupied(){
+                return this.#cellsOccupied.length;
+            }
+
+            get marker(){
+                return this.#marker;
+            }
+
+            vacateCell(cell){
+                let tempCells = [];
+
+                // Iterate through all cells in the array, until a match is found.
+                for (let i = 0; i < this.#cellsOccupied.length; i++) {
+                    let cell = this.#cellsOccupied.pop();
+                    if(cell === cell) {
+                        break;
+                    } else {
+                        tempCells.push(cell);
+                    }
+                }
+
+                // Re-add removed cells, that were not a match.
+                for (let i = 0; i < tempCells.length; i++) {
+                    this.#cellsOccupied.push(tempCells.pop())                    
+                }
+            }
+
+            occupyCell(cell){
+                this.cellsOccupied.push(cell);
+            }
+
+            toString() {
+                if(this.#isPlayerX == true) {
+                    return "Player X";
+                } else {
+                    return "Player Y";
+                }
+            }
+        }
+
+        // Present the initial game board:
+        let game = new gameBoard("Tic-tac-toe", "msgFieldLabel", 3);
+
+    </script>
+</body>
+
+</html>
+
+
+
+
