@@ -67,6 +67,17 @@
             color: black;
             font-size: 155px;
             border-radius: 0px;
+            border-color: black;
+        }
+
+        .markedGameCellForRemoval {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: black;
+            font-size: 155px;
+            border-radius: 0px;
+            border: 3px, solid;
+            border-color: red;
         }
 
         .emptyGameCell:hover {
@@ -75,6 +86,10 @@
 
         .markedGameCell:hover {
             background-color: whitesmoke;
+        }
+
+        .markedGameCellForRemoval:hover {
+            background-color: lightsalmon;
         }
 
         .rulesArea {
@@ -88,9 +103,6 @@
             margin-right: 10%;
             font-size: 1.5em;
         }
-
-
-
     </style>
 </head>
 
@@ -98,7 +110,6 @@
     <!-- HTML Presentation logic -->
     <div class="container">
         <h1>Tic Tac Toe</h1>
-
 
         <!-- Rules button -->
         <button type="button" onclick="toggleRules()">Rules</button>
@@ -113,14 +124,11 @@
             <p><h2><b>X starts!</b></h2></p>
         </div>
 
-
         <!-- We use JavaScript to manage and display the playing field -->
         <div id="Tic-tac-toe"></div>
 
-
         <!-- Container to display the next players turn -->
         <div class="msgField" id="msgFieldLabel"></div>
-
 
         <!-- Reset button -->
         <button type="reset" onclick="game.resetBoard()">Restart</button>
@@ -129,7 +137,6 @@
 
     <!-- JavaScript -->
     <script>
-
         // JavaScript used to support the page layout and general presentation:
         function toggleRules() {
             let rulesField = document.getElementById("rules");
@@ -140,20 +147,20 @@
             }
         }
 
-
         // Game Logic:
         
         // The gameCell class is used to represent each individual cell on the game board.
         class gameCell {
             xPos                // Contains the X-Coordinate of this cell, on the playing board.
             yPos                // Contains the X-Coordinate of this cell, on the playing board.
-            occupiedBy = null   // Used to save which player has marked this cell.
+            #occupiedBy         // Used to save which player has marked this cell.
             #parentGameBoard    // Reference to the parent Game Board, so interactions with cells can be persisted in the GameBoard object.
 
             constructor(parentGameBoard, x = 0, y = 0){
                 this.#parentGameBoard = parentGameBoard
                 this.xPos = x
                 this.yPos = y
+                this.#occupiedBy = null;
             }
 
             get X() {
@@ -165,22 +172,20 @@
             }
 
             set occupiedBy(player){
-                this.occupiedBy = player
+                this.#occupiedBy = player
             }
 
             get occupiedBy(){
-                if(this.occupiedBy == null) {
+                if(this.#occupiedBy == null) {
                     return null;
                 } else {
-                    return this.occupiedBy;
+                    return this.#occupiedBy;
                 }
             }
 
             occupyGameCell(player){
-                this.occupiedBy = player;
-                console.log("Occupied");
+                this.#occupiedBy = player;
             }
-
         }
 
 
@@ -239,35 +244,50 @@
             }
 
             
-            // Use a html table to contain the playing board.
+            // Use a html table to contain the game board.
             #formatGameBoard(){
                 // format the columns:
                 let gameHTML = "<table>";
-                let cellNumber = 0;
                 for (let y = 0; y < this.gameSize; y++) {
                     // format the rows within each column:
                     gameHTML += "<tr>";
                     for (let x = 0; x < this.gameSize; x++) {
                         gameHTML += "<td>";
                         // Format the cell: 
-                        if(this.getGameCell(x, y).occupiedBy == null){
+                        let cell = this.getGameCell(x, y);
+                        let winner = this.#checkForWinner();
+
+                        // If the cell is unoccupied - we will need to display an empty cell, maybe with a button:
+                        if(cell.occupiedBy == null){
                             // Check if game is ongoing (no winner found), if so we add interactable buttons to each unmarked cells:
-                            if (this.#checkForWinner() == null) {
+                            if(winner == null){
                                 // Now check if both players have placed all their marks (max marks = gameSize.. i.e. on a 3x3 board each player can max. 
                                 // have 3 marks placed on the board at a time.)
-                                if(!(this.players[0].numberOfCellsOccupied >= this.gameSize
-                                && this.players[1].numberOfCellsOccupied >= this.gameSize)) {
+                                if(!(this.nextMoveBy.numberOfCellsOccupied >= this.gameSize)) {
                                     // Generate a button to interact with, assigning this cell to a player and marking it!
                                     gameHTML += `<button class='emptyGameCell' onClick='game.occupyGameCell(${x}, ${y})'> </button>`;
-                                }
+                                } 
+                            } else {
+                                gameHTML += "<button class='markedGameCell' > </button>";
                             }
-                        } else { 
-                            // Otherwise; Display the occupying players mark (X or O)
-                            gameHTML += "<button class='markedGameCell'>" + this.getGameCell(x, y).occupiedBy.marker + " </button>";
-                        } 
 
+                        // If the cell is occupied - we will need to display the contents of the cell, maybe with a button to remove prior marks:
+                        } else { 
+                            // If we already have a winner, make so to display cells so they cannot be interacted further with.
+                            if(winner != null) {
+                                gameHTML += "<button class='markedGameCell'>" + cell.occupiedBy.marker + " </button>";
+
+                            // If we don't have a winner, but both players have placed their marks, make sure they can select a mark to remove / move.
+                            } else if(cell.occupiedBy === this.nextMoveBy && this.nextMoveBy.numberOfCellsOccupied >= this.gameSize) {
+                                gameHTML += `<button class='markedGameCell markedGameCellForRemoval' onClick='game.clearGameCell(${x}, ${y})'>` + cell.occupiedBy.marker + "</button>";
+                            
+                            // If non of the above apply, simply display the contents of the cell:
+                            } else {
+                                // Otherwise; Display the occupying players mark (X or O)
+                                gameHTML += "<button class='markedGameCell'>" + cell.occupiedBy.marker + " </button>";
+                            }
+                        } 
                         gameHTML += "</td>";
-                        cellNumber++;
                     }
                     gameHTML += "</tr>";
                 }
@@ -291,19 +311,39 @@
                     this.nextMoveBy.occupyCell(cell);
 
                     // Toggle the players:
-                    this.lastMoveBy = this.nextMoveBy;
-                    if(this.lastMoveBy === this.players[0]) {
-                        this.nextMoveBy = this.players[1];
-                    } else {
-                        this.nextMoveBy = this.players[0];
-                    }
-
-                    this.refreshBoard(); // Re-render the board
+                    this.#togglePlayers();
+                    this.refreshBoard();
 
                     // Check if this was the winning move:
                     if(this.#checkForWinner()) {
                         this.displayWinner();
                     }
+                }
+            }
+
+            clearGameCell(x,y) {
+                let cell = this.getGameCell(x, y);
+
+                if(cell && cell.occupiedBy != null) {
+                    // Remove the cell from the players list of occupied cells:
+                    this.nextMoveBy.vacateCell(cell);
+
+                    // vacate the cell on the board:
+                    cell.occupiedBy = null;
+
+                    // Toggle the players:
+                    this.#togglePlayers();
+                    this.refreshBoard();
+                }
+            }
+
+            #togglePlayers() {
+                this.lastMoveBy = this.nextMoveBy;
+
+                if(this.lastMoveBy === this.players[0]) {
+                    this.nextMoveBy = this.players[1];
+                } else {
+                    this.nextMoveBy = this.players[0];
                 }
             }
 
@@ -350,7 +390,6 @@
             // Checks if all cells are adjacent, based on the first cell. Returns true, if all cells are adjacent (horizontal, diagonal or vertical).
             #checkIfOccupiedCellsAreAdjacent(cells){
                 // Check if all cells are adjacent:
-                //console.log("Horizontal: " + )
                 if(this.#checkIfOccupiedCellsAreHorizontallyAdjacent(cells) != false
                     || this.#checkIfOccupiedCellsAreVerticallyAdjacent(cells) != false
                     || this.#checkIfOccupiedCellsAreDiagonallyAdjacent(cells) != false){
@@ -399,7 +438,7 @@
         }
 
 
-        // The player super class is used to contain shared player information and methods.
+        // The player class is used to contain player information and methods.
         class player {
             #cellsOccupied;   // Contains a list of the cells, this player is occupying.
             #marker;
@@ -426,23 +465,9 @@
                 return this.#marker;
             }
 
-            vacateCell(cell){
-                let tempCells = [];
-
-                // Iterate through all cells in the array, until a match is found.
-                for (let i = 0; i < this.#cellsOccupied.length; i++) {
-                    let cell = this.#cellsOccupied.pop();
-                    if(cell === cell) {
-                        break;
-                    } else {
-                        tempCells.push(cell);
-                    }
-                }
-
-                // Re-add removed cells, that were not a match.
-                for (let i = 0; i < tempCells.length; i++) {
-                    this.#cellsOccupied.push(tempCells.pop())                    
-                }
+            vacateCell(cellToVacate){
+                // Filter the list of cells, keeping all cells that are different from the one to remove.
+                this.#cellsOccupied = this.#cellsOccupied.filter(current_cell => current_cell !== cellToVacate);
             }
 
             occupyCell(cell){
@@ -453,7 +478,7 @@
                 if(this.#isPlayerX == true) {
                     return "Player X";
                 } else {
-                    return "Player Y";
+                    return "Player O";
                 }
             }
         }
