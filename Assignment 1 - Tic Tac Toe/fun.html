@@ -1,0 +1,523 @@
+<!-- Assignment 1, WEB2: Created by Kristian M. P. Dashnaw -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe (Functional Programming)</title>
+    
+    <!-- CSS Section-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 2px solid;
+            border-color: black;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        td {
+            width: 200px;
+            height: 200px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .emptyGameCell, .markedGameCell {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            color: black;
+            font-size: 155px;
+            border-radius: 0px;
+            border-color: black;
+        }
+
+        .markedGameCellForRemoval {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: black;
+            font-size: 155px;
+            border-radius: 0px;
+            border: 3px, solid;
+            border-color: red;
+        }
+
+        .emptyGameCell:hover {
+            background-color: lightgrey;
+        }
+
+        .markedGameCell:hover {
+            background-color: whitesmoke;
+        }
+
+        .markedGameCellForRemoval:hover {
+            background-color: lightsalmon;
+        }
+
+        .rulesArea {
+            display: none;
+        }
+
+        .msgField {
+            background-color: white;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HTML Presentation logic -->
+    <div class="container">
+        <h1>Functional Programming<br>Tic Tac Toe </h1>
+
+        <!-- Rules button -->
+        <button type="button" onclick="toggleRules()">Rules</button>
+        <div id="rules" class="rulesArea">
+            <p>Tic-tac-toe is played on a three-by-three grid by two players,
+            who alternately place the marks X and O in one of the nine spaces 
+            in the grid.</p>
+        
+            <p>In the following example, the first player (X) wins the game in seven steps:</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Tic-tac-toe-game-1.svg" alt="Pictures showing how the game is played">
+
+            <p><h2><b>X starts!</b></h2></p>
+        </div>
+
+        <!-- We use JavaScript to manage and display the playing field -->
+        <div id="Tic-tac-toe"></div>
+
+        <!-- Container to display the next players turn -->
+        <div class="msgField" id="msgFieldLabel"></div>
+
+        <!-- Reset button -->
+        <button type="reset" onclick="gameState = createGame(gameDivElementId, msgDivElementId, 3).displayGameAsHtml">Restart</button>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript used to support the page layout and general presentation:
+        function toggleRules() {
+            const rulesField = document.getElementById("rules");
+            if (rulesField.style.display === "none" || rulesField.style.display === ""){
+                rulesField.style.display = "block";
+            } else {
+                rulesField.style.display = "none";
+            }
+        }
+
+
+        // Game Logic:
+        // Main function to create the gameState:
+        function createGame(gameHtmlElementId, msgHtmlFieldElementId, gameSize, existingCells = []){
+            const gameBoard = Object.freeze(createGameBoard(gameSize, existingCells));
+            return Object.freeze({
+                gameBoard,
+                displayGameAsHtml: Object.freeze((() => {
+                    // Display the game as html:
+                    displayHtml(gameHtmlElementId, formatHtmlGameBoardDisplay(gameBoard));
+
+                    // Display either the player whos turn it is, or the winning player:
+                    const winningPlayer = checkForWinner([gameBoard.playerX, gameBoard.playerY], gameSize)
+
+                    if(winningPlayer != null){
+                        displayHtml(msgHtmlFieldElementId, formatHtmlWinningPlayer(winningPlayer))
+                    } else {
+                        displayHtml(msgHtmlFieldElementId, formatHtmlNextPlayerTurn(gameBoard.nextMoveBy))
+                    }
+                })())
+            });
+        }
+
+
+        // Returns a record of a gameBoard. It is immutable.
+        function createGameBoard(gameSize, occupiedCells = [], existingPlayerX = null, existingPlayerY = null, nextPlayerToMove = null){
+            const playerX = Object.freeze(existingPlayerX || createPlayer('X', "Player X"));
+            
+            return Object.freeze({
+                cells: Object.freeze(generateMultipleGameCells(gameSize, occupiedCells)),
+                boardSize: gameSize,
+                playerX,
+                playerY: existingPlayerY || Object.freeze(createPlayer('O', "Player O")),
+                nextMoveBy: nextPlayerToMove || playerX,
+            });
+        }
+
+
+        // Returns a tuple containing gameCells for a board of the specified size. It is immutable.
+        function generateMultipleGameCells(_gameSize, existingCells = []){
+            const cells = [];
+
+            // First loop: Ensures cells are generated for all y-coordinates.
+            for (let y = 0; y < _gameSize; y++) {
+                // Second loop: Ensures cells are generated for all x-coordinates at this y-coordinate.
+                for (let x = 0; x < _gameSize; x++) {
+                    // Check if this cell was passed as an existing cell, and if so - ensure to transfer the cell owner to the newly generated cell!
+                    const existingCell = getCell(x, y, existingCells);
+                    if(existingCells.length > 0 && existingCell != null){
+                        cells[cells.length] = Object.freeze(createSingleGameCell(x, y, existingCell.occupiedBy));
+                    } else {
+                        cells[cells.length] = Object.freeze(createSingleGameCell(x, y));
+                    }
+                }
+            }
+            return Object.freeze(cells);
+        }
+
+
+        // Iterates through an array/tuple of Game Cells and returns any matches that correspond with the given x and y coordinates. If no match, returns null.
+        function getCell(x, y, cells = []){
+            let _cells = cells;
+
+            // Since cells might have been stringified during button generation, we need to check if this is a string now and convert to proper tuple/array:
+            if(typeof cells === "string"){
+                _cells = Object.freeze(JSON.parse(cells));
+            }
+
+            for (let i = 0; i < _cells.length; i++) {
+                if(_cells[i].xPos === x && _cells[i].yPos === y){
+                    return _cells[i];
+                }          
+            }
+            return null;
+        }
+
+
+        // Returns a record of a gameCell. It is immutable.
+        function createSingleGameCell(x, y, occupyingPlayer = null){
+            return Object.freeze({
+                xPos: x,
+                yPos: y,
+                occupiedBy: occupyingPlayer
+            });
+        }
+
+
+        // Returns a new gameState with the designated cell marks as occupied.
+        function occupyGameCell(_cell, existingGameBoard, occupyingPlayer, gameHtmlElementId, msgHtmlFieldElementId){
+            // Some of the arguments might have been stringified during html button generation. Let's check if they were, and convert them back into pure javaScript arrays/tuples:
+            let _gameBoard = existingGameBoard;
+            if(typeof existingGameBoard === "string"){
+                _gameboard = Object.freeze(JSON.parse(gameBoard));
+            }
+
+            let _occupyingPlayer = occupyingPlayer;
+            if(typeof occupyingPlayer === "string"){
+                _occupyingPlayer = Object.freeze(JSON.parse(occupyingPlayer));
+            }
+
+            // Add the cell to the players occupied list, by copying the existing occupied immutable cells in the player tuple:
+            const updatedOccupiedCells = [..._occupyingPlayer.cellsOccupied.map(cell => cell), _cell];
+            const updatedPlayer = createPlayer(_occupyingPlayer.marker, _occupyingPlayer.name, updatedOccupiedCells);
+        
+            // Assign the occupying player to the cell:
+            const updatedCell = createSingleGameCell(_cell.xPos, _cell.yPos, updatedPlayer);
+
+            // Rebuild the list of cells, for the gameboard, with the modified cell added:
+            const cells = rebuildGameCellList(_gameBoard.cells, updatedCell);
+
+            // Progres/Update gamestate and return the new game state:
+            return updateGameState(cells, updatedPlayer, _gameBoard, gameHtmlElementId, msgHtmlFieldElementId);
+        }
+
+
+        // Returns a new gameState with the designated cell marks as occupied.
+        function clearGameCell(_cell, existingGameBoard, gameHtmlElementId, msgHtmlFieldElementId){
+            // Some of the arguments might have been stringified during html button generation. Let's check if they were, and convert them back into pure javaScript arrays/tuples:
+            let _gameBoard = existingGameBoard;
+            if(typeof existingGameBoard === "string"){
+                _gameboard = Object.freeze(JSON.parse(gameBoard));
+            }
+
+            // Remove the cell from the players occupied list:
+            const updatedOccupiedCells = _gameBoard.nextMoveBy.cellsOccupied
+                .filter(cell => !(cell.xPos === _cell.xPos && cell.yPos === _cell.yPos))    // Filter out the cell to remove.
+                .map(cell => structuredClone(cell));                                        // Ensures a deep copy of each cell is made (instead of a shallow one!)
+         
+            const updatedPlayer = createPlayer(_gameBoard.nextMoveBy.marker, _gameBoard.nextMoveBy.name, updatedOccupiedCells);
+        
+            // Update the cell by creating a new updated version:
+            const updatedCell = createSingleGameCell(_cell.xPos, _cell.yPos, null);
+
+            // Rebuild the list of cells, for the gameboard, with the modified cell added:
+            const cells = rebuildGameCellList(_gameBoard.cells, updatedCell);
+
+            // Progres/Update gamestate and return the new game state:
+            return updateGameState(cells, updatedPlayer, _gameBoard, gameHtmlElementId, msgHtmlFieldElementId);
+        }
+
+
+        // Rebuilds a list of cells by creating a new copy, where the specified _updatedCell is inserted in 
+        // place of a corresponding old cell where xPos and xPos are a match.
+        function rebuildGameCellList(_oldCellList, _updatedCell = null){
+            // Rebuild the list of cells, for the gameboard, with the modified cell added:
+            const cells = [];
+            for (let i = 0; i < _oldCellList.length; i++) {
+                if(_updatedCell != null && _oldCellList[i].xPos === _updatedCell.xPos && _oldCellList[i].yPos === _updatedCell.yPos){
+                    cells[i] = Object.freeze(createSingleGameCell(_updatedCell.xPos, _updatedCell.yPos, _updatedCell.occupiedBy));
+                } else {
+                    cells[i] = Object.freeze(_oldCellList[i]);
+                }
+            }
+
+            return Object.freeze(cells);
+        }
+
+
+        // Updates/Progresses the game state, by switching the currently active player and returning a new game state.
+        // _updatedCells is the modified cell array/tuple after a player either occupied or vacated a cell.
+        // _updatedPlayer is the modified player, after said players association with a cell was either established or removed.
+        // existingGameBoard is the old gameBoard containing the unmodified gameState.
+        function updateGameState(_updatedCells, _updatedPlayer, existingGameBoard, gameHtmlElementId, msgHtmlFieldElementId){
+            // Pass the turn along to the next player:
+            nextTurnBy = switchPlayerTurns(
+                _updatedPlayer, 
+                (_updatedPlayer.name === existingGameBoard.playerX.name) ? _updatedPlayer : existingGameBoard.playerX,
+                (_updatedPlayer.name === existingGameBoard.playerY.name) ? _updatedPlayer : existingGameBoard.playerY
+            );
+
+            // Recreate the gameBoard with the cell marked as occupied:
+            const newGameBoard = Object.freeze(
+                createGameBoard(
+                    existingGameBoard.boardSize, 
+                    _updatedCells, 
+                    (_updatedPlayer.name === existingGameBoard.playerX.name) ? _updatedPlayer : existingGameBoard.playerX, 
+                    (_updatedPlayer.name === existingGameBoard.playerY.name) ? _updatedPlayer : existingGameBoard.playerY,
+                    nextTurnBy
+                ));
+
+            // Return the new gameState:
+            return {
+                gameBoard: newGameBoard,
+                displayGameAsHtml: Object.freeze((() => {
+                    // Display the game as html:
+                    displayHtml(gameHtmlElementId, formatHtmlGameBoardDisplay(newGameBoard));
+
+                    // Display either the player whos turn it is, or the winning player:
+                    const winningPlayer = checkForWinner([newGameBoard.playerX, newGameBoard.playerY], newGameBoard.boardSize)
+
+                    if(winningPlayer != null){
+                        displayHtml(msgHtmlFieldElementId, formatHtmlWinningPlayer(winningPlayer))
+                    } else {
+                        displayHtml(msgHtmlFieldElementId, formatHtmlNextPlayerTurn(newGameBoard.nextMoveBy))
+                    }
+                })())
+            }
+        }
+
+
+        function switchPlayerTurns(currentTurnPlayer, playerX, playerY){
+            if(playerX.name === currentTurnPlayer.name){
+                return playerY;
+            } else {
+                return playerX;
+            }
+        }
+
+
+        // Returns a record of a player. It is immutable.
+        function createPlayer(_marker, _playerName, _cellsOccupied = []){
+            return Object.freeze({
+                cellsOccupied: _cellsOccupied,
+                marker: _marker,
+                name: _playerName
+            });
+        }
+
+
+        // Generates the html code to display the gameBoard.
+        function formatHtmlGameBoardDisplay(_gameBoard) {
+            // format the columns:
+            let gameHTML = "<table>";
+            for (let y = 0; y < _gameBoard.boardSize; y++) {
+                // format the rows within each column:
+                gameHTML += "<tr>";
+                for (let x = 0; x < _gameBoard.boardSize; x++) {
+                    gameHTML += "<td>";
+                    // Format the cell: 
+                    const cell = _gameBoard.cells.find(c => c.xPos === x && c.yPos === y);
+                    const winner = checkForWinner([_gameBoard.playerX, _gameBoard.playerY], _gameBoard.boardSize);
+
+                    // If the cell is unoccupied - we will need to display an empty cell, maybe with a button:
+                    if(cell.occupiedBy == null){
+                        // Check if game is ongoing (no winner found), if so we add interactable buttons to each unmarked cells:
+                        if(winner == null){
+                            // Now check if both players have placed all their marks (max marks = gameSize.. i.e. on a 3x3 board each player can max. 
+                            // have 3 marks placed on the board at a time.)
+                            if(!(_gameBoard.nextMoveBy.cellsOccupied.length >= _gameBoard.boardSize)) {
+                                // Generate a button to interact with, assigning this cell to a player and marking it!
+                                gameHTML += `<button class='emptyGameCell' onClick='occupyGameCell(
+                                    getCell(${x}, ${y}, ${JSON.stringify(_gameBoard.cells)}),
+                                    ${JSON.stringify(_gameBoard)},
+                                    ${JSON.stringify(_gameBoard.nextMoveBy)},
+                                    "${gameDivElementId}",
+                                    "${msgDivElementId}")' > </button>`;
+                            } 
+                        } else {
+                            gameHTML += "<button class='markedGameCell' > </button>";
+                        }
+
+                    // If the cell is occupied - we will need to display the contents of the cell, maybe with a button to remove prior marks:
+                    } else { 
+
+                        // If we already have a winner, make so to display cells so they cannot be interacted further with.
+                        if(winner != null) {
+                            gameHTML += "<button class='markedGameCell'>" + cell.occupiedBy.marker + " </button>";
+
+                        // If we don't have a winner, but both players have placed their marks, make sure they can select a mark to remove / move.
+                        } else if(cell.occupiedBy.name === _gameBoard.nextMoveBy.name && _gameBoard.nextMoveBy.cellsOccupied.length >= _gameBoard.boardSize) {
+                            gameHTML += `<button class='markedGameCell markedGameCellForRemoval' onClick='clearGameCell(
+                                    getCell(${x}, ${y}, ${JSON.stringify(_gameBoard.cells)}),
+                                    ${JSON.stringify(_gameBoard)},
+                                    "${gameDivElementId}",
+                                    "${msgDivElementId}")' > ` + cell.occupiedBy.marker + "</button>";
+                        
+                        // If non of the above apply, simply display the contents of the cell:
+                        } else {
+                            // Otherwise; Display the occupying players mark (X or O)
+                            gameHTML += "<button class='markedGameCell'>" + cell.occupiedBy.marker + " </button>";
+                        }
+                    } 
+                    gameHTML += "</td>";
+                }
+                gameHTML += "</tr>";
+            }
+            gameHTML += "</table>";
+            return gameHTML;
+        }
+
+
+        function formatHtmlNextPlayerTurn(player){
+            return Object.freeze("<p><b>Current Turn: <b>" + player.name + "</p>");
+        }
+
+
+        function formatHtmlWinningPlayer(player){
+            return Object.freeze("<p><b>WINNER: <b>" + player.name + "</p>");
+        }
+
+
+        function displayHtml(_elementId, _html) {
+            document.getElementById(_elementId).innerHTML = _html;
+        }
+
+
+        // Returns null, if there is no winner - otherwise returns the winning player!
+        function checkForWinner(players, boardSize){
+            for (let i = 0; i < players.length; i++) {
+                if(players[i].cellsOccupied.length === boardSize) {
+                    if(checkIfOccupiedCellsAreAdjacent(players[i].cellsOccupied)) {
+                        return Object.freeze(players[i]);
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        // Checks if all cells are adjacent, based on the first cell. Returns true, if all cells are adjacent (horizontal, diagonal or vertical).
+        function checkIfOccupiedCellsAreAdjacent(cells){
+            // Check if all cells are adjacent:
+            if(checkIfOccupiedCellsAreHorizontallyAdjacent(cells) != false
+            || checkIfOccupiedCellsAreVerticallyAdjacent(cells) != false
+            || checkIfOccupiedCellsAreDiagonallyAdjacent(cells) != false){
+                return true;
+            }
+            return false
+        }
+
+
+        function checkIfOccupiedCellsAreHorizontallyAdjacent(cells){
+            // We only check the X-axis based on the first occupied cell and return false if any cell is not on the same X-Axis as the first occupied cell.
+            // Logic: To be on the same X-axis, all cells must have identical y-coordinate values.
+            for (let i = 1; i < cells.length; i++) {
+                if(cells[i].yPos !== cells[0].yPos){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        function checkIfOccupiedCellsAreVerticallyAdjacent(cells){
+            // We only check the Y-axis based on the first occupied cell and return false if any cell is not on the same Y-Axis as the first occupied cell.
+            // Logic: To be on the same Y-axis, all cells must have identical x-coordinate values.
+            for (let i = 1; i < cells.length; i++) {
+                if(cells[i].xPos !== cells[0].xPos){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        function checkIfOccupiedCellsAreDiagonallyAdjacent(cells){
+            // Logic: For cells to be diagonally, they cannot share any x or y-values. So this is what we check against:
+            for (let i = 0; i < cells.length; i++) {
+                let currentCell = cells[i];
+                for (let j = 0; j < cells.length; j++) {
+                    if(currentCell !== cells[j]) {
+                        if(currentCell.xPos === cells[j].xPos || currentCell.yPos === cells[j].yPos) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        
+
+        // Initialize the game:
+        gameDivElementId = Object.freeze("Tic-tac-toe");
+        msgDivElementId = Object.freeze("msgFieldLabel");
+        gameState = createGame(gameDivElementId, msgDivElementId, 3).displayGameAsHtml;
+
+    </script>
+</body>
+
+</html>
+
+
+
+
