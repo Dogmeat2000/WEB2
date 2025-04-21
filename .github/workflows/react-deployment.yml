@@ -35,7 +35,11 @@ jobs:
 
       - name: Build the app
         working-directory: 'Assignment 2 - Pokedex Web App/pokedex-app'
-        run: npm run build
+        run: | 
+          npm run build
+          mkdir -p dist/Assignment-1
+          cp "../Assignment 1 - Tic Tac Toe/fun.html" dist/Assignment-1/
+          cp "../Assignment 1 - Tic Tac Toe/oo.html" dist/Assignment-1/
 
       - name: Configure Pages
         uses: actions/configure-pages@v4
