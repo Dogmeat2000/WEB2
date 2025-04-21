@@ -14,3 +14,10 @@ The task was to develop a react based web app that displays a Pokedex, featuring
 
 ## Try it here:
 [View the Pokedex here](https://dogmeat2000.github.io/WEB2/)
+
+<br><br><br><br><br>
+
+## Design template:
+The webpage was first sketched with drawio, where the main layout was drawn up and then converted to react components. These form the basis of the entire react based application.
+
+![Wireframe](./pokedex-wireframe.drawio.svg)
