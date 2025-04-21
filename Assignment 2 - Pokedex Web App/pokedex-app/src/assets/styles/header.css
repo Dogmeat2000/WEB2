@@ -1,0 +1,84 @@
+.headerContainer {
+    display:flex;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid grey;
+    margin-bottom: 2em;
+}
+
+.headerContainer img {
+    width: 50%;
+    height: 50%;
+}
+
+.headerItemGroup{
+    align-self:center;
+    font-size: 1.15em;
+}
+
+.headerItemFlexGrowDouble {
+    flex-grow: 2;
+}
+
+.headerItemFlexBasisLogo {
+    flex-basis: 20%;
+}
+
+.headerItemFlexBasisTitle {
+    flex-basis: 60%;
+}
+
+.headerItemFlexBasisNavBar {
+    flex-basis: 20%;
+}
+
+
+.nav {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display:inline-block;
+    font-size: 1.2em;
+    padding: 0px 2px 0px 2px;
+    margin: 2px 2px 5px 2px;
+}
+
+.nav button {
+    padding: 2px 10px 2px 10px;
+}
+
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .searchInput {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 1px;
+    height:24px;
+  }
+  
+  .searchButton {
+    padding: 6px 12px;
+    background-color: #d62828;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.1s ease;
+  }
+  
+  .searchButton:hover {
+    background-color: #a71d1d;
+  }

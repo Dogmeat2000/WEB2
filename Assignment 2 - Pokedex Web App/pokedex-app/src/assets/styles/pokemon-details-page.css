@@ -1,0 +1,170 @@
+.pokemonDetailsContainer {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 512px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url("../images/cards/card-generic-background.webp");
+    background-position: center;
+    background-size:cover;
+    color:black;
+    margin-bottom: 10px;
+}
+
+.pokemonStatsPanelContainer {
+    width: 35%;
+    min-width: 460px;
+    min-height: 484px;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid black;
+    padding: 5px;
+    margin-right: 10px;
+    color: black;
+}
+
+.pokeNameAndIndexContainer {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    display: flexbox;
+    background-color: rgba(249, 237, 209, 0.776);
+    border: 1.5px rgba(230, 217, 188, 0.776);
+    border-style:ridge;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    border-radius: 10px;
+}
+
+.pokeStats_Name {
+    font-family: 'Arial', sans-serif;
+    font-size: 37px;
+    font-weight: bold;
+    color: darkslategrey;
+    text-transform: uppercase;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+.pokeIndex {
+    position: absolute;
+    top: 0px;
+    width: 18%;
+    text-align: left;
+    text-indent: 5px;
+    border-radius: 10px 0px 10px 0px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: darkslategrey;
+}
+
+.pokeTypeContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokeTypeHeader {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkslategrey;
+    text-transform: uppercase;
+}
+
+.pokeStatTableContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    max-width: 400px;
+}
+
+.pokeStatTableRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pokeStatTableName {
+    width: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.pokeStatBarWrapper {
+    flex: 1;
+    background-color: #e4e4e4;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 24px;
+    position: relative;
+}
+
+.pokeBarStatFiller {
+    background: linear-gradient(to right, #34d399, #10b981);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    transition: width 0.4s ease;
+}
+
+.pokeBarValueDisplay {
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.pokemonActionPanelContainer {
+    min-width: 768px;
+    min-height: 484px;
+    border: 0px solid black;
+    position: relative;
+    display: flex;
+    padding: 5px;
+    background-image: url("../images/environments/grass.png");
+    background-position: center;
+    background-size:cover;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.4),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.pokemonActionGifFormat {
+    position: relative;
+    overflow: hidden;
+    bottom: 0;
+    image-rendering: pixelated;
+    transform-origin: bottom center;
+    pointer-events: none;
+}
+
+.pokemonSoundContainer {
+    position: relative;
+    background-color: rgba(245, 245, 245, 0.422);
+    height: 10%;
+    left: 92.5%;
+}
+
+.pokemonSoundButton {
+    color:black;
+    height: 10%;
+}

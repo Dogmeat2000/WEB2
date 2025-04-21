@@ -1,0 +1,19 @@
+.ButtonContentsInline {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ButtonWidth {
+    margin: 0px 5px 5px 5px;
+    width: 120px;
+    padding: 5px 10px 5px 10px;
+}
+
+.cardSeriesDisplayFormat {
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}

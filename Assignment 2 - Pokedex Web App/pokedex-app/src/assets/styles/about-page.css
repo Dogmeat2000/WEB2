@@ -1,0 +1,9 @@
+img {
+    width:100%;
+}
+
+li {
+    justify-self: left;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
