@@ -20,4 +20,6 @@ The task was to develop a react based web app that displays a Pokedex, featuring
 ## Design template:
 The webpage was first sketched with drawio, where the main layout was drawn up and then converted to react components. These form the basis of the entire react based application.
 
-![Wireframe](./pokedex-wireframe.drawio.svg)
+![Wireframe](https://raw.githubusercontent.com/Dogmeat2000/WEB2/e519a504375e5cbd945925b0a47574546c2bc93d/Assignment%202%20-%20Pokedex%20Web%20App/pokedex-app/pokedex-wireframe.drawio.svg)
+
+[Download it here](./pokedex-wireframe.drawio.svg)
