@@ -1,12 +1,16 @@
-# React + Vite
+# Assignment 2: Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The task was to develop a react based web app that displays a Pokedex, featuring an overview (and details) of all the Pokemons.
 
-Currently, two official plugins are available:
+<img width="640" alt="pokedex-preview" src="https://github.com/user-attachments/assets/299e17eb-022a-44f9-94a8-8cbfa3b8bcfc" /><br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements:
 
-## Expanding the ESLint configuration
+  - Pokémon information must be retrieved from pokeapi, which you should already be familiar with.
+  - The Pokédex must display a list of Pokémon and support simple pagination (e.g. “next” and “previous” buttons to get the next/previous page of Pokémon), such that not all Pokémon are displayed at the same time.
+  - When a user clicks on a specific Pokémon, additional information about that Pokémon must be displayed. E.g. type(s), stats, abiltities, height and weight.
+  - The application must contain multiple pages (e.g. "pokedex" and "about") and utilize React Router to route between them.
+  - The application must be developed using Vite.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Try it here:
+[View the Pokedex here](https://dogmeat2000.github.io/WEB2/)
