@@ -1,4 +1,3 @@
-import '../../app.css'
 import '../../assets/styles/about-page.css'
 
 function PokedexOverview() {
