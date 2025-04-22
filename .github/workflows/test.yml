@@ -1,0 +1,35 @@
+name: Run Vitest Tests with Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: Assignment 2 - Pokedex Web App/pokedex-app
+        run: npm ci
+
+      - name: Run Vitest tests with coverage
+        working-directory: Assignment 2 - Pokedex Web App/pokedex-app
+        run: npm run test:coverage
+
+      - name: Output coverage summary
+        if: always()
+        working-directory: Assignment 2 - Pokedex Web App/pokedex-app
+        run: |
+          echo "Coverage Report:"
+          cat coverage/coverage-final.json || echo "No coverage file found"
