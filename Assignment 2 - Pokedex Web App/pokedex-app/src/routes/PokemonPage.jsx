@@ -22,7 +22,12 @@ function PokemonPage() {
         throw new Error(`Http error! Status: ${response.status}`)
       }
       const data = await response.json();
-      return data.count;
+      if(data.count > 1025) {
+        // Hard coded max Pokemon count cap here, since the pokeapi fetch request also extracts GIGA and other special variants which do not have ordinary numbers.
+        return 1025;
+      } else {
+        return data.count;
+      }
 
     } catch (error) {
       console.error('Could not fetch pokemon count:', error);

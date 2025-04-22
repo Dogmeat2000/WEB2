@@ -39,7 +39,7 @@ function SearchBar() {
     <div className="searchBarContainer">
       <input
         type="text"
-        placeholder="Search Pokémon..."
+        placeholder="Search... (name or id)"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyPress}

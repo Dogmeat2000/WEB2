@@ -9,7 +9,7 @@ function Header() {
     return (
       <>
         {/* Container for the entire header:*/}
-        <div className="headerContainer">
+        <header className="headerContainer">
 
           {/* The right-most part of the header:*/}
           <div className="headerItemGroup headerItemFlexBasisLogo">
@@ -31,7 +31,7 @@ function Header() {
             <SearchBar />
 
           </div>
-        </div>
+        </header>
       </>
     )
   }

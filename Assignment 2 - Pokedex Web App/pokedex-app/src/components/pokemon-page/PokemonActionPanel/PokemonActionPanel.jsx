@@ -19,7 +19,12 @@ function PokemonActionPanel( { pokemonData } ) {
 
       try {
         // Load spriteUrl:
-        setGifUrl(pokemonData?.sprites?.other?.showdown?.front_default);
+        const gif_url = pokemonData?.sprites?.other?.showdown?.front_default
+        if(gif_url != null) {
+          setGifUrl(pokemonData?.sprites?.other?.showdown?.front_default);
+        } else {
+          setGifUrl(pokemonData?.sprites?.other["official-artwork"]?.front_default);
+        }
 
         // Load other data:
         setPokemonHeight(pokemonData?.height/10);
@@ -58,6 +63,7 @@ function PokemonActionPanel( { pokemonData } ) {
       <PokemonActionGif 
         pokemonGifUrl={gifUrl}
         currentPokemonHeight={pokemonHeight}
+        primaryPokemonType={pokemonData?.types[0].type?.name}
       />
     </>
   )

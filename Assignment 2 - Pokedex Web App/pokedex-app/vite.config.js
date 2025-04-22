@@ -5,4 +5,15 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base: '/WEB2/',
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/tests/setup.js',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'json'],
+      include: ['src/**/*.{js,jsx,ts,tsx}'],
+      exclude: ['src/tests/**', 'src/**/*.test.{js,jsx,ts,tsx}']
+    }
+  }
 })

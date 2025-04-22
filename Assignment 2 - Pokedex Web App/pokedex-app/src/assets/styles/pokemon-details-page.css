@@ -137,15 +137,257 @@
     position: relative;
     display: flex;
     padding: 5px;
-    background-image: url("../images/environments/grass.png");
-    background-position: center;
-    background-size:cover;
     color: black;
     border-radius: 10px;
     overflow: hidden;
     box-shadow:
     inset 4px 4px 10px rgba(0, 0, 0, 0.4),
     inset -4px -4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.pokemonActionPanelContainer_Background {
+    background-position: center;
+    background-size:cover;
+}
+
+.pokemonActionPanelContainer_Background_Small_Bug {
+    background-image: url("../images/environments/bug/small_bug.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Bug {
+    background-image: url("../images/environments/bug/medium_bug.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Bug {
+    background-image: url("../images/environments/bug/large_bug.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Dark {
+    background-image: url("../images/environments/dark/small_dark.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Dark {
+    background-image: url("../images/environments/dark/medium_dark.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Dark {
+    background-image: url("../images/environments/dark/large_dark.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Dragon {
+    background-image: url("../images/environments/dragon/small_dragon.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Dragon {
+    background-image: url("../images/environments/dragon/medium_dragon.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Dragon {
+    background-image: url("../images/environments/dragon/large_dragon.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Electric {
+    background-image: url("../images/environments/electric/small_electric.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Electric {
+    background-image: url("../images/environments/electric/medium_electric.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Electric {
+    background-image: url("../images/environments/electric/large_electric.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Fairy {
+    background-image: url("../images/environments/fairy/small_fairy.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Fairy {
+    background-image: url("../images/environments/fairy/medium_fairy.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Fairy {
+    background-image: url("../images/environments/fairy/large_fairy.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Fighting {
+    background-image: url("../images/environments/fighting/small_fighting.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Fighting {
+    background-image: url("../images/environments/fighting/medium_fighting.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Fighting {
+    background-image: url("../images/environments/fighting/large_fighting.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Fire {
+    background-image: url("../images/environments/fire/small_fire.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Fire {
+    background-image: url("../images/environments/fire/medium_fire.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Fire {
+    background-image: url("../images/environments/fire/large_fire.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Flying {
+    background-image: url("../images/environments/flying/small_flying.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Flying {
+    background-image: url("../images/environments/flying/medium_flying.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Flying {
+    background-image: url("../images/environments/flying/large_flying.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Ghost {
+    background-image: url("../images/environments/ghost/small_ghost.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Ghost {
+    background-image: url("../images/environments/ghost/medium_ghost.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Ghost {
+    background-image: url("../images/environments/ghost/large_ghost.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Grass {
+    background-image: url("../images/environments/grass/small_grass.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Grass {
+    background-image: url("../images/environments/grass/medium_grass.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Grass {
+    background-image: url("../images/environments/grass/large_grass.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Ground {
+    background-image: url("../images/environments/ground/small_ground.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Ground {
+    background-image: url("../images/environments/ground/medium_ground.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Ground {
+    background-image: url("../images/environments/ground/large_ground.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Ice {
+    background-image: url("../images/environments/ice/small_ice.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Ice {
+    background-image: url("../images/environments/ice/medium_ice.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Ice {
+    background-image: url("../images/environments/ice/large_ice.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Normal {
+    background-image: url("../images/environments/normal/small_normal.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Normal {
+    background-image: url("../images/environments/normal/medium_normal.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Normal {
+    background-image: url("../images/environments/normal/large_normal.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Poison {
+    background-image: url("../images/environments/poison/small_poison.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Poison {
+    background-image: url("../images/environments/poison/medium_poison.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Poison {
+    background-image: url("../images/environments/poison/large_poison.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Psychic {
+    background-image: url("../images/environments/psychic/small_psychic.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Psychic {
+    background-image: url("../images/environments/psychic/medium_psychic.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Psychic {
+    background-image: url("../images/environments/psychic/large_psychic.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Rock {
+    background-image: url("../images/environments/rock/small_rock.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Rock {
+    background-image: url("../images/environments/rock/medium_rock.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Rock {
+    background-image: url("../images/environments/rock/large_rock.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Steel {
+    background-image: url("../images/environments/steel/small_steel.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Steel {
+    background-image: url("../images/environments/steel/medium_steel.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Steel {
+    background-image: url("../images/environments/steel/large_steel.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Stellar {
+    background-image: url("../images/environments/stellar/small_stellar.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Stellar {
+    background-image: url("../images/environments/stellar/medium_stellar.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Stellar {
+    background-image: url("../images/environments/stellar/large_stellar.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Water {
+    background-image: url("../images/environments/water/small_water.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Water {
+    background-image: url("../images/environments/water/medium_water.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Water {
+    background-image: url("../images/environments/water/large_water.webp");
+}
+
+.pokemonActionPanelContainer_Background_Small_Unknown {
+    background-image: url("../images/environments/unknown/small_unknown.webp");
+}
+
+.pokemonActionPanelContainer_Background_Medium_Unknown {
+    background-image: url("../images/environments/unknown/medium_unknown.webp");
+}
+
+.pokemonActionPanelContainer_Background_Large_Unknown {
+    background-image: url("../images/environments/unknown/large_unknown.webp");
 }
 
 .pokemonActionGifFormat {

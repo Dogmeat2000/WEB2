@@ -126,6 +126,7 @@ function PokemonCard({ pokemonName, pokemonUrl}) {
             {console.log("loaded this pokemon:\n ", displayedPokemon)}
 
             <div className="pokeCard" ref={cardRef}
+            data-testid="pokeCard"
             role="button"
             onMouseMove={handleMouseMove} 
             onMouseEnter={handleMouseEnter} 
