@@ -38,7 +38,15 @@ jobs:
         with:
           name: 'vitest-test-report'  # Name for the test report artifact
           reporter: 'clover'  # Use 'clover' to match your coverage reporter
-          files: 'coverage/clover.xml'  # Path to your Clover XML file
+          path: 'coverage/clover.xml'  # Path to your Clover XML file
+          path-replace-backslashes: false
+          list-suites: all
+          list-tests: all
+          max-annotations: 10
+          fail-on-error: true
+          fail-on-empty: true
+          only-summary: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show coverage summary in logs
         if: always()
