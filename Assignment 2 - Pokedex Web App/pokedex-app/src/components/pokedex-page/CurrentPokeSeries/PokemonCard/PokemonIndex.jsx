@@ -1,7 +1,13 @@
 function PokemonIndex( { pokemonIndex } ) { 
 
+    let index = pokemonIndex;
+
+    if( pokemonIndex == null) {
+        index = '???';
+    }
+
     return (
-        <p>{"#" + pokemonIndex}</p>
+        <p>{"#" + index}</p>
     )
   }
   
