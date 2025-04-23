@@ -28,7 +28,7 @@ jobs:
       - name: Run Vitest with coverage and GitHub reporter
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: |
-          npm run test:ci
+          npm run test:coverage
         env:
           FORCE_COLOR: 1
 
