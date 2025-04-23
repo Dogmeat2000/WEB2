@@ -36,6 +36,7 @@ jobs:
         if: always()
         uses: dorny/test-reporter@v1
         with:
+          name: 'vitest-test-report'  # Name for the test report artifact
           reporter: 'clover'  # Use 'clover' to match your coverage reporter
           files: 'coverage/clover.xml'  # Path to your Clover XML file
 
