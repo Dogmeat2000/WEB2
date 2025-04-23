@@ -59,7 +59,7 @@ jobs:
         with:
           name: 'vitest-test-report'
           reporter: 'jest-junit'
-          path: 'coverage/junit.xml'
+          path: 'Assignment 2 - Pokedex Web App/pokedex-app/coverage/junit.xml'
           path-replace-backslashes: false
           list-suites: all
           list-tests: all
