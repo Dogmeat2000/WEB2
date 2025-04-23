@@ -25,22 +25,17 @@ jobs:
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: npm ci
 
-      - name: Run Vitest tests with coverage and GitHub annotations
+      - name: Run Vitest with coverage and GitHub reporter
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: |
-          npm run test:coverage -- --reporter=default --reporter=github
+          npm run test:ci
+        env:
+          FORCE_COLOR: 1
 
-      - name: Show coverage summary
+      - name: Show coverage summary in logs
         if: always()
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: |
           echo "=== Coverage Summary ==="
           cat coverage/coverage-summary.json || echo "No summary file found"
           echo "========================"
-
-      - name: Upload coverage report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: Assignment 2 - Pokedex Web App/pokedex-app/coverage/
