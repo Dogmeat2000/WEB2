@@ -12,7 +12,7 @@ export default defineConfig({
     reporters: ['default', 'vitest-github-actions-reporter'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'text-summary', 'html', 'json', 'lcov'],
+      reporter: ['text', 'text-summary', 'html', 'json', 'lcov', 'clover'],
       include: ['src/**/*.{js,jsx,ts,tsx}'],
       exclude: ['src/tests/**', 'src/**/*.test.{js,jsx,ts,tsx}']
     }
