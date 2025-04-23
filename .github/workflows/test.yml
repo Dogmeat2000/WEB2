@@ -45,6 +45,14 @@ jobs:
           echo "Searching for junit.xml in project:"
           find . -name "junit.xml" || echo "junit.xml not found anywhere"
 
+      - name: Verify junit.xml accessibility
+        if: always()
+        run: |
+          echo "Checking if junit.xml exists:"
+          test -f coverage/junit.xml && echo "junit.xml exists" || echo "junit.xml does not exist"
+          echo "Full path:"
+          realpath coverage/junit.xml || echo "Cannot resolve path"
+
       - name: Upload test results to GitHub UI
         if: always()
         uses: dorny/test-reporter@v1
