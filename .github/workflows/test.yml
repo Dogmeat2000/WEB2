@@ -35,6 +35,16 @@ jobs:
         env:
           FORCE_COLOR: 1
 
+      - name: Debug coverage files
+        if: always()
+        run: |
+          echo "Listing coverage directory contents:"
+          ls -la coverage/ || echo "Coverage directory not found"
+          echo "Checking for junit.xml in coverage:"
+          cat coverage/junit.xml || echo "junit.xml not found in coverage"
+          echo "Searching for junit.xml in project:"
+          find . -name "junit.xml" || echo "junit.xml not found anywhere"
+
       - name: Upload test results to GitHub UI
         if: always()
         uses: dorny/test-reporter@v1
