@@ -36,9 +36,9 @@ jobs:
         if: always()
         uses: dorny/test-reporter@v1
         with:
-          name: 'vitest-test-report'  # Name for the test report artifact
-          reporter: 'clover'  # Use 'clover' to match your coverage reporter
-          path: 'coverage/clover.xml'  # Path to your Clover XML file
+          name: 'vitest-test-report'
+          reporter: 'junit'  # Changed to 'junit'
+          path: 'Assignment 2 - Pokedex Web App/pokedex-app/coverage/junit.xml'  # Path to JUnit XML file
           path-replace-backslashes: false
           list-suites: all
           list-tests: all
