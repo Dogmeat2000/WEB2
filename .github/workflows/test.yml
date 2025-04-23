@@ -25,12 +25,28 @@ jobs:
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: npm ci
 
-      - name: Run Vitest with coverage and GitHub reporter
+      - name: Run Vitest with coverage
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: |
           npm run test:coverage
         env:
           FORCE_COLOR: 1
+
+      - name: Upload test results to GitHub UI
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: 'vitest-test-report'  # Name for the test report artifact
+          reporter: 'clover'  # Use 'clover' to match your coverage reporter
+          path: 'coverage/clover.xml'  # Path to your Clover XML file
+          path-replace-backslashes: false
+          list-suites: all
+          list-tests: all
+          max-annotations: 10
+          fail-on-error: true
+          fail-on-empty: true
+          only-summary: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show coverage summary in logs
         if: always()
