@@ -56,6 +56,47 @@ jobs:
           echo "Full path:"
           realpath coverage/junit.xml || echo "Cannot resolve path"
 
+      - name: Generate Test Summary
+        if: always()
+        run: |
+          # Extract test metrics from junit.xml
+          TOTAL_TESTS=$(grep -o 'tests="[0-9]*"' coverage/junit.xml | head -1 | grep -o '[0-9]*')
+          FAILURES=$(grep -o 'failures="[0-9]*"' coverage/junit.xml | head -1 | grep -o '[0-9]*')
+          ERRORS=$(grep -o 'errors="[0-9]*"' coverage/junit.xml | head -1 | grep -o '[0-9]*')
+          SKIPPED=$(grep -o 'skipped="[0-9]*"' coverage/junit.xml | head -1 | grep -o '[0-9]*')
+          
+          # Handle cases where values might be missing
+          TOTAL_TESTS=${TOTAL_TESTS:-0}
+          FAILURES=${FAILURES:-0}
+          ERRORS=${ERRORS:-0}
+          SKIPPED=${SKIPPED:-0}
+          
+          # Calculate passed tests
+          PASSED=$((TOTAL_TESTS - FAILURES - ERRORS - SKIPPED))
+          
+          # Extract coverage metrics (if available in coverage-summary.json)
+          if [ -f coverage/coverage-summary.json ]; then
+            LINE_COVERAGE=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+            BRANCH_COVERAGE=$(jq '.total.branches.pct' coverage/coverage-summary.json)
+          else
+            LINE_COVERAGE="N/A"
+            BRANCH_COVERAGE="N/A"
+          fi
+          
+          # Generate Markdown summary
+          echo "## Test Report Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Total Tests:** $TOTAL_TESTS" >> $GITHUB_STEP_SUMMARY
+          echo "**Passed:** $PASSED" >> $GITHUB_STEP_SUMMARY
+          echo "**Failures:** $FAILURES" >> $GITHUB_STEP_SUMMARY
+          echo "**Errors:** $ERRORS" >> $GITHUB_STEP_SUMMARY
+          echo "**Skipped:** $SKIPPED" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Line Coverage:** $LINE_COVERAGE%" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch Coverage:** $BRANCH_COVERAGE%" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "For detailed test results, see the [Checks tab](#checks)." >> $GITHUB_STEP_SUMMARY
+
       - name: Upload test results to GitHub UI
         if: always()
         uses: dorny/test-reporter@v1
@@ -73,7 +114,6 @@ jobs:
 
       - name: Show coverage summary in logs
         if: always()
-        working-directory: Assignment 2 - Pokedex Web App/pokedex-app
         run: |
           echo "=== Coverage Summary ==="
           cat coverage/coverage-summary.json || echo "No summary file found"
