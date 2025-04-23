@@ -37,8 +37,8 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: 'vitest-test-report'
-          reporter: 'junit'  # Changed to 'junit'
-          path: 'Assignment 2 - Pokedex Web App/pokedex-app/coverage/junit.xml'  # Path to JUnit XML file
+          reporter: 'jest-junit'
+          path: 'Assignment 2 - Pokedex Web App/pokedex-app/coverage/junit.xml'
           path-replace-backslashes: false
           list-suites: all
           list-tests: all
