@@ -9,13 +9,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Assignment 2 - Pokedex Web App/pokedex-app
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
@@ -38,7 +41,7 @@ jobs:
         with:
           name: 'vitest-test-report'
           reporter: 'jest-junit'
-          path: 'Assignment 2 - Pokedex Web App/pokedex-app/coverage/junit.xml'
+          path: 'coverage/junit.xml'
           path-replace-backslashes: false
           list-suites: all
           list-tests: all
@@ -46,7 +49,6 @@ jobs:
           fail-on-error: true
           fail-on-empty: true
           only-summary: false
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show coverage summary in logs
         if: always()
