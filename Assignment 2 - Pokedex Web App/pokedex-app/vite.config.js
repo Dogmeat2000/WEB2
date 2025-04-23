@@ -9,10 +9,10 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: './src/tests/setup.js',
-    reporters: ['default', 'github'],
+    reporters: ['default', 'vitest-github-actions-reporter'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'html', 'json', 'lcov'],
+      reporter: ['text', 'text-summary', 'html', 'json', 'lcov'],
       include: ['src/**/*.{js,jsx,ts,tsx}'],
       exclude: ['src/tests/**', 'src/**/*.test.{js,jsx,ts,tsx}']
     }
