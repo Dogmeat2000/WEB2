@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
     defaults:
       run:
         working-directory: Assignment 2 - Pokedex Web App/pokedex-app
