@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="6" failures="0" errors="0" time="1.7112878">
-    <testsuite name="src/tests/App.test.jsx" timestamp="2025-04-23T18:14:39.026Z" hostname="Kristian-DG" tests="5" failures="0" errors="0" skipped="0" time="1.6557593">
-        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the heading" time="0.3179187">
+<testsuites name="vitest tests" tests="6" failures="0" errors="0" time="1.5627582">
+    <testsuite name="src/tests/App.test.jsx" timestamp="2025-04-23T18:41:23.396Z" hostname="Kristian-DG" tests="5" failures="0" errors="0" skipped="0" time="1.50519">
+        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the heading" time="0.2249137">
         </testcase>
-        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the search bar" time="0.018259">
+        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the search bar" time="0.0125671">
         </testcase>
-        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the footer disclaimer" time="0.0162447">
+        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders the footer disclaimer" time="0.0133175">
         </testcase>
-        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders Pokémon cards" time="0.3946997">
+        <testcase classname="src/tests/App.test.jsx" name="App &gt; renders Pokémon cards" time="0.3710843">
             <system-out>
 loaded this pokemon:
   {
@@ -360,10 +360,197 @@ loaded this pokemon:
 
             </system-out>
         </testcase>
-        <testcase classname="src/tests/App.test.jsx" name="App &gt; updates cards when clicking next" time="0.9055538">
+        <testcase classname="src/tests/App.test.jsx" name="App &gt; updates cards when clicking next" time="0.8805314">
             <system-out>
 loaded this pokemon:
   {
+  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
+  base_experience: [33m72[39m,
+  cries: {
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
+  },
+  forms: [
+    {
+      name: [32m&apos;kakuna&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
+    }
+  ],
+  game_indices: [
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m }
+  ],
+  height: [33m6[39m,
+  held_items: [],
+  id: [33m14[39m,
+  is_default: [33mtrue[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
+  moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
+  ],
+  name: [32m&apos;kakuna&apos;[39m,
+  order: [33m18[39m,
+  past_abilities: [],
+  past_types: [],
+  species: {
+    name: [32m&apos;kakuna&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
+  },
+  sprites: {
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
+    back_female: [1mnull[22m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
+    back_shiny_female: [1mnull[22m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
+    front_female: [1mnull[22m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
+    front_shiny_female: [1mnull[22m,
+    other: {
+      dream_world: [36m[Object][39m,
+      home: [36m[Object][39m,
+      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
+      showdown: [36m[Object][39m
+    },
+    versions: {
+      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
+    }
+  },
+  stats: [
+    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
+  ],
+  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
+  weight: [33m100[39m
+}
+loaded this pokemon:
+  {
+  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
+  base_experience: [33m72[39m,
+  cries: {
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
+  },
+  forms: [
+    {
+      name: [32m&apos;kakuna&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
+    }
+  ],
+  game_indices: [
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m }
+  ],
+  height: [33m6[39m,
+  held_items: [],
+  id: [33m14[39m,
+  is_default: [33mtrue[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
+  moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
+  ],
+  name: [32m&apos;kakuna&apos;[39m,
+  order: [33m18[39m,
+  past_abilities: [],
+  past_types: [],
+  species: {
+    name: [32m&apos;kakuna&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
+  },
+  sprites: {
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
+    back_female: [1mnull[22m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
+    back_shiny_female: [1mnull[22m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
+    front_female: [1mnull[22m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
+    front_shiny_female: [1mnull[22m,
+    other: {
+      dream_world: [36m[Object][39m,
+      home: [36m[Object][39m,
+      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
+      showdown: [36m[Object][39m
+    },
+    versions: {
+      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
+    }
+  },
+  stats: [
+    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
+  ],
+  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
+  weight: [33m100[39m
+}
+
+loaded this pokemon:
+  {
   abilities: [
     { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
     { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
@@ -559,42 +746,42 @@ loaded this pokemon:
   abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
   base_experience: [33m72[39m,
   cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/11.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/11.ogg&apos;[39m
   },
   forms: [
     {
-      name: [32m&apos;kakuna&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
+      name: [32m&apos;metapod&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/11/&apos;[39m
     }
   ],
   game_indices: [
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m }
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m }
   ],
-  height: [33m6[39m,
+  height: [33m7[39m,
   held_items: [],
-  id: [33m14[39m,
+  id: [33m11[39m,
   is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/11/encounters&apos;[39m,
   moves: [
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
@@ -602,22 +789,22 @@ loaded this pokemon:
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
   ],
-  name: [32m&apos;kakuna&apos;[39m,
-  order: [33m18[39m,
+  name: [32m&apos;metapod&apos;[39m,
+  order: [33m15[39m,
   past_abilities: [],
   past_types: [],
   species: {
-    name: [32m&apos;kakuna&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
+    name: [32m&apos;metapod&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/11/&apos;[39m
   },
   sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png&apos;[39m,
     back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/11.png&apos;[39m,
     back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png&apos;[39m,
     front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png&apos;[39m,
     front_shiny_female: [1mnull[22m,
     other: {
       dream_world: [36m[Object][39m,
@@ -637,57 +824,57 @@ loaded this pokemon:
     }
   },
   stats: [
-    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m55[39m, effort: [33m2[39m, stat: [36m[Object][39m },
     { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
     { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
+    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m }
   ],
-  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m100[39m
+  types: [ { slot: [33m1[39m, type: [36m[Object][39m } ],
+  weight: [33m99[39m
 }
 loaded this pokemon:
   {
   abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
   base_experience: [33m72[39m,
   cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/11.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/11.ogg&apos;[39m
   },
   forms: [
     {
-      name: [32m&apos;kakuna&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
+      name: [32m&apos;metapod&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/11/&apos;[39m
     }
   ],
   game_indices: [
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m }
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m124[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m },
+    { game_index: [33m11[39m, version: [36m[Object][39m }
   ],
-  height: [33m6[39m,
+  height: [33m7[39m,
   held_items: [],
-  id: [33m14[39m,
+  id: [33m11[39m,
   is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/11/encounters&apos;[39m,
   moves: [
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
@@ -695,22 +882,22 @@ loaded this pokemon:
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
   ],
-  name: [32m&apos;kakuna&apos;[39m,
-  order: [33m18[39m,
+  name: [32m&apos;metapod&apos;[39m,
+  order: [33m15[39m,
   past_abilities: [],
   past_types: [],
   species: {
-    name: [32m&apos;kakuna&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
+    name: [32m&apos;metapod&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/11/&apos;[39m
   },
   sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png&apos;[39m,
     back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/11.png&apos;[39m,
     back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png&apos;[39m,
     front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png&apos;[39m,
     front_shiny_female: [1mnull[22m,
     other: {
       dream_world: [36m[Object][39m,
@@ -730,15 +917,205 @@ loaded this pokemon:
     }
   },
   stats: [
-    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m55[39m, effort: [33m2[39m, stat: [36m[Object][39m },
     { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
     { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
+    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m }
+  ],
+  types: [ { slot: [33m1[39m, type: [36m[Object][39m } ],
+  weight: [33m99[39m
+}
+loaded this pokemon:
+  {
+  abilities: [
+    { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
+    { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
+  ],
+  base_experience: [33m39[39m,
+  cries: {
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/13.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/13.ogg&apos;[39m
+  },
+  forms: [
+    {
+      name: [32m&apos;weedle&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/13/&apos;[39m
+    }
+  ],
+  game_indices: [
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m }
+  ],
+  height: [33m3[39m,
+  held_items: [],
+  id: [33m13[39m,
+  is_default: [33mtrue[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/13/encounters&apos;[39m,
+  moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
+  ],
+  name: [32m&apos;weedle&apos;[39m,
+  order: [33m17[39m,
+  past_abilities: [ { abilities: [36m[Array][39m, generation: [36m[Object][39m } ],
+  past_types: [],
+  species: {
+    name: [32m&apos;weedle&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/13/&apos;[39m
+  },
+  sprites: {
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png&apos;[39m,
+    back_female: [1mnull[22m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/13.png&apos;[39m,
+    back_shiny_female: [1mnull[22m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png&apos;[39m,
+    front_female: [1mnull[22m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png&apos;[39m,
+    front_shiny_female: [1mnull[22m,
+    other: {
+      dream_world: [36m[Object][39m,
+      home: [36m[Object][39m,
+      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
+      showdown: [36m[Object][39m
+    },
+    versions: {
+      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
+    }
+  },
+  stats: [
+    { base_stat: [33m40[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m1[39m, stat: [36m[Object][39m }
   ],
   types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m100[39m
+  weight: [33m32[39m
+}
+loaded this pokemon:
+  {
+  abilities: [
+    { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
+    { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
+  ],
+  base_experience: [33m39[39m,
+  cries: {
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/13.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/13.ogg&apos;[39m
+  },
+  forms: [
+    {
+      name: [32m&apos;weedle&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/13/&apos;[39m
+    }
+  ],
+  game_indices: [
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m112[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m },
+    { game_index: [33m13[39m, version: [36m[Object][39m }
+  ],
+  height: [33m3[39m,
+  held_items: [],
+  id: [33m13[39m,
+  is_default: [33mtrue[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/13/encounters&apos;[39m,
+  moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
+  ],
+  name: [32m&apos;weedle&apos;[39m,
+  order: [33m17[39m,
+  past_abilities: [ { abilities: [36m[Array][39m, generation: [36m[Object][39m } ],
+  past_types: [],
+  species: {
+    name: [32m&apos;weedle&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/13/&apos;[39m
+  },
+  sprites: {
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png&apos;[39m,
+    back_female: [1mnull[22m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/13.png&apos;[39m,
+    back_shiny_female: [1mnull[22m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png&apos;[39m,
+    front_female: [1mnull[22m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png&apos;[39m,
+    front_shiny_female: [1mnull[22m,
+    other: {
+      dream_world: [36m[Object][39m,
+      home: [36m[Object][39m,
+      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
+      showdown: [36m[Object][39m
+    },
+    versions: {
+      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
+      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
+    }
+  },
+  stats: [
+    { base_stat: [33m40[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m1[39m, stat: [36m[Object][39m }
+  ],
+  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
+  weight: [33m32[39m
 }
 
 loaded this pokemon:
@@ -929,70 +1306,68 @@ loaded this pokemon:
 }
 loaded this pokemon:
   {
-  abilities: [
-    { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
-    { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
-  ],
-  base_experience: [33m39[39m,
+  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
+  base_experience: [33m72[39m,
   cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/13.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/13.ogg&apos;[39m
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
   },
   forms: [
     {
-      name: [32m&apos;weedle&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/13/&apos;[39m
+      name: [32m&apos;kakuna&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
     }
   ],
   game_indices: [
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m }
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m }
   ],
-  height: [33m3[39m,
+  height: [33m6[39m,
   held_items: [],
-  id: [33m13[39m,
+  id: [33m14[39m,
   is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/13/encounters&apos;[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
   moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
   ],
-  name: [32m&apos;weedle&apos;[39m,
-  order: [33m17[39m,
-  past_abilities: [ { abilities: [36m[Array][39m, generation: [36m[Object][39m } ],
+  name: [32m&apos;kakuna&apos;[39m,
+  order: [33m18[39m,
+  past_abilities: [],
   past_types: [],
   species: {
-    name: [32m&apos;weedle&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/13/&apos;[39m
+    name: [32m&apos;kakuna&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
   },
   sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png&apos;[39m,
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
     back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/13.png&apos;[39m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
     back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png&apos;[39m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
     front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png&apos;[39m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
     front_shiny_female: [1mnull[22m,
     other: {
       dream_world: [36m[Object][39m,
@@ -1012,82 +1387,80 @@ loaded this pokemon:
     }
   },
   stats: [
-    { base_stat: [33m40[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m1[39m, stat: [36m[Object][39m }
+    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
   ],
   types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m32[39m
+  weight: [33m100[39m
 }
 loaded this pokemon:
   {
-  abilities: [
-    { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
-    { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
-  ],
-  base_experience: [33m39[39m,
+  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
+  base_experience: [33m72[39m,
   cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/13.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/13.ogg&apos;[39m
+    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
+    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
   },
   forms: [
     {
-      name: [32m&apos;weedle&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/13/&apos;[39m
+      name: [32m&apos;kakuna&apos;[39m,
+      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
     }
   ],
   game_indices: [
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m112[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m },
-    { game_index: [33m13[39m, version: [36m[Object][39m }
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m113[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m },
+    { game_index: [33m14[39m, version: [36m[Object][39m }
   ],
-  height: [33m3[39m,
+  height: [33m6[39m,
   held_items: [],
-  id: [33m13[39m,
+  id: [33m14[39m,
   is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/13/encounters&apos;[39m,
+  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
   moves: [
+    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
     { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
   ],
-  name: [32m&apos;weedle&apos;[39m,
-  order: [33m17[39m,
-  past_abilities: [ { abilities: [36m[Array][39m, generation: [36m[Object][39m } ],
+  name: [32m&apos;kakuna&apos;[39m,
+  order: [33m18[39m,
+  past_abilities: [],
   past_types: [],
   species: {
-    name: [32m&apos;weedle&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/13/&apos;[39m
+    name: [32m&apos;kakuna&apos;[39m,
+    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
   },
   sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png&apos;[39m,
+    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
     back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/13.png&apos;[39m,
+    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
     back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png&apos;[39m,
+    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
     front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png&apos;[39m,
+    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
     front_shiny_female: [1mnull[22m,
     other: {
       dream_world: [36m[Object][39m,
@@ -1107,15 +1480,15 @@ loaded this pokemon:
     }
   },
   stats: [
-    { base_stat: [33m40[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m1[39m, stat: [36m[Object][39m }
+    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
+    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
   ],
   types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m32[39m
+  weight: [33m100[39m
 }
 
 loaded this pokemon:
@@ -1312,192 +1685,6 @@ loaded this pokemon:
 }
 loaded this pokemon:
   {
-  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
-  base_experience: [33m72[39m,
-  cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/11.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/11.ogg&apos;[39m
-  },
-  forms: [
-    {
-      name: [32m&apos;metapod&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/11/&apos;[39m
-    }
-  ],
-  game_indices: [
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m }
-  ],
-  height: [33m7[39m,
-  held_items: [],
-  id: [33m11[39m,
-  is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/11/encounters&apos;[39m,
-  moves: [
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
-  ],
-  name: [32m&apos;metapod&apos;[39m,
-  order: [33m15[39m,
-  past_abilities: [],
-  past_types: [],
-  species: {
-    name: [32m&apos;metapod&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/11/&apos;[39m
-  },
-  sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png&apos;[39m,
-    back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/11.png&apos;[39m,
-    back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png&apos;[39m,
-    front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png&apos;[39m,
-    front_shiny_female: [1mnull[22m,
-    other: {
-      dream_world: [36m[Object][39m,
-      home: [36m[Object][39m,
-      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
-      showdown: [36m[Object][39m
-    },
-    versions: {
-      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
-    }
-  },
-  stats: [
-    { base_stat: [33m50[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m55[39m, effort: [33m2[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m }
-  ],
-  types: [ { slot: [33m1[39m, type: [36m[Object][39m } ],
-  weight: [33m99[39m
-}
-loaded this pokemon:
-  {
-  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
-  base_experience: [33m72[39m,
-  cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/11.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/11.ogg&apos;[39m
-  },
-  forms: [
-    {
-      name: [32m&apos;metapod&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/11/&apos;[39m
-    }
-  ],
-  game_indices: [
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m124[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m },
-    { game_index: [33m11[39m, version: [36m[Object][39m }
-  ],
-  height: [33m7[39m,
-  held_items: [],
-  id: [33m11[39m,
-  is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/11/encounters&apos;[39m,
-  moves: [
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
-  ],
-  name: [32m&apos;metapod&apos;[39m,
-  order: [33m15[39m,
-  past_abilities: [],
-  past_types: [],
-  species: {
-    name: [32m&apos;metapod&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/11/&apos;[39m
-  },
-  sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png&apos;[39m,
-    back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/11.png&apos;[39m,
-    back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png&apos;[39m,
-    front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png&apos;[39m,
-    front_shiny_female: [1mnull[22m,
-    other: {
-      dream_world: [36m[Object][39m,
-      home: [36m[Object][39m,
-      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
-      showdown: [36m[Object][39m
-    },
-    versions: {
-      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
-    }
-  },
-  stats: [
-    { base_stat: [33m50[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m20[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m55[39m, effort: [33m2[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m30[39m, effort: [33m0[39m, stat: [36m[Object][39m }
-  ],
-  types: [ { slot: [33m1[39m, type: [36m[Object][39m } ],
-  weight: [33m99[39m
-}
-loaded this pokemon:
-  {
   abilities: [
     { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m },
     { ability: [36m[Object][39m, is_hidden: [33mtrue[39m, slot: [33m3[39m }
@@ -1685,192 +1872,6 @@ loaded this pokemon:
   ],
   types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
   weight: [33m32[39m
-}
-loaded this pokemon:
-  {
-  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
-  base_experience: [33m72[39m,
-  cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
-  },
-  forms: [
-    {
-      name: [32m&apos;kakuna&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
-    }
-  ],
-  game_indices: [
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m }
-  ],
-  height: [33m6[39m,
-  held_items: [],
-  id: [33m14[39m,
-  is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
-  moves: [
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
-  ],
-  name: [32m&apos;kakuna&apos;[39m,
-  order: [33m18[39m,
-  past_abilities: [],
-  past_types: [],
-  species: {
-    name: [32m&apos;kakuna&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
-  },
-  sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
-    back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
-    back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
-    front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
-    front_shiny_female: [1mnull[22m,
-    other: {
-      dream_world: [36m[Object][39m,
-      home: [36m[Object][39m,
-      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
-      showdown: [36m[Object][39m
-    },
-    versions: {
-      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
-    }
-  },
-  stats: [
-    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
-  ],
-  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m100[39m
-}
-loaded this pokemon:
-  {
-  abilities: [ { ability: [36m[Object][39m, is_hidden: [33mfalse[39m, slot: [33m1[39m } ],
-  base_experience: [33m72[39m,
-  cries: {
-    latest: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg&apos;[39m,
-    legacy: [32m&apos;https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg&apos;[39m
-  },
-  forms: [
-    {
-      name: [32m&apos;kakuna&apos;[39m,
-      url: [32m&apos;https://pokeapi.co/api/v2/pokemon-form/14/&apos;[39m
-    }
-  ],
-  game_indices: [
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m113[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m },
-    { game_index: [33m14[39m, version: [36m[Object][39m }
-  ],
-  height: [33m6[39m,
-  held_items: [],
-  id: [33m14[39m,
-  is_default: [33mtrue[39m,
-  location_area_encounters: [32m&apos;https://pokeapi.co/api/v2/pokemon/14/encounters&apos;[39m,
-  moves: [
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m },
-    { move: [36m[Object][39m, version_group_details: [36m[Array][39m }
-  ],
-  name: [32m&apos;kakuna&apos;[39m,
-  order: [33m18[39m,
-  past_abilities: [],
-  past_types: [],
-  species: {
-    name: [32m&apos;kakuna&apos;[39m,
-    url: [32m&apos;https://pokeapi.co/api/v2/pokemon-species/14/&apos;[39m
-  },
-  sprites: {
-    back_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png&apos;[39m,
-    back_female: [1mnull[22m,
-    back_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png&apos;[39m,
-    back_shiny_female: [1mnull[22m,
-    front_default: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png&apos;[39m,
-    front_female: [1mnull[22m,
-    front_shiny: [32m&apos;https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png&apos;[39m,
-    front_shiny_female: [1mnull[22m,
-    other: {
-      dream_world: [36m[Object][39m,
-      home: [36m[Object][39m,
-      [32m&apos;official-artwork&apos;[39m: [36m[Object][39m,
-      showdown: [36m[Object][39m
-    },
-    versions: {
-      [32m&apos;generation-i&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-ii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-iv&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-v&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vi&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-vii&apos;[39m: [36m[Object][39m,
-      [32m&apos;generation-viii&apos;[39m: [36m[Object][39m
-    }
-  },
-  stats: [
-    { base_stat: [33m45[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m50[39m, effort: [33m2[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m25[39m, effort: [33m0[39m, stat: [36m[Object][39m },
-    { base_stat: [33m35[39m, effort: [33m0[39m, stat: [36m[Object][39m }
-  ],
-  types: [ { slot: [33m1[39m, type: [36m[Object][39m }, { slot: [33m2[39m, type: [36m[Object][39m } ],
-  weight: [33m100[39m
 }
 
 loaded this pokemon:
@@ -2952,8 +2953,8 @@ loaded this pokemon:
             </system-out>
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/components/about-page/AboutContentContainer.test.jsx" timestamp="2025-04-23T18:14:39.035Z" hostname="Kristian-DG" tests="1" failures="0" errors="0" skipped="0" time="0.0555285">
-        <testcase classname="src/tests/components/about-page/AboutContentContainer.test.jsx" name="App &gt; renders the contents of the AboutContentContainer (About Page)" time="0.0530725">
+    <testsuite name="src/tests/components/about-page/AboutContentContainer.test.jsx" timestamp="2025-04-23T18:41:23.403Z" hostname="Kristian-DG" tests="1" failures="0" errors="0" skipped="0" time="0.0575682">
+        <testcase classname="src/tests/components/about-page/AboutContentContainer.test.jsx" name="App &gt; renders the contents of the AboutContentContainer (About Page)" time="0.0551102">
         </testcase>
     </testsuite>
 </testsuites>
