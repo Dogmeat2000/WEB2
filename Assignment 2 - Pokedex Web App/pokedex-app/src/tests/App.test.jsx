@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { render, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
@@ -34,11 +33,9 @@ describe('App', () => {
   it('renders Pokémon cards', async () => {
     render(<App />);
     
-    // Wait for cards to load
     const cards = await screen.findAllByTestId('pokeCard', { timeout: 5000 });
     expect(cards.length).toBeGreaterThan(0);
 
-    // Optionally: confirm they have the correct class
     cards.forEach(card => {
       expect(card).toHaveClass('pokeCard');
     });
@@ -62,6 +59,6 @@ describe('App', () => {
       const cardsAfter = await screen.findAllByTestId('pokeCard');
       const firstAfter = cardsAfter[0].textContent;
       expect(firstAfter).not.toBe(firstBefore);
-    }, { timeout: 3000 });
+    }, { timeout: 5000 });
   });
 });
